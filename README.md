@@ -1,6 +1,6 @@
 
 # EdgeAI
-## Project Descript
+## Project Description
 Edge AI is a technology that introduces accessibility to Artificially intelligent Chabot's to all mobile platforms including  basic phones.
 
 Users interact with Llamma3.2 light weight model through SMS service featured in almost every mobile phone.
