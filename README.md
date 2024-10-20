@@ -1,5 +1,12 @@
 
 # EdgeAI
+## Project Descript
+Edge AI is a technology that introduces accessibility to Artificially intelligent Chabot's to all mobile platforms including  basic phones.
+
+Users interact with Llamma3.2 light weight model through SMS service featured in almost every mobile phone.
+
+The project aims to drive meaningful change by increasing accessibility to unlimited knowledge powered by llama3.2 models to all.
+
 ## How to Use
 
 ### 1. Start the FastAPI server with Uvicorn
