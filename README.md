@@ -1,5 +1,5 @@
 
-# smsGPT
+# EdgeAI
 ## How to Use
 
 ### 1. Start the FastAPI server with Uvicorn
