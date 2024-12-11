@@ -21,9 +21,10 @@
 
 import os
 from flask import Flask, request, Response, jsonify
-from send_sms import send_sms  # Assuming send_sms is defined in another file
+from send_sms import SMSHandler  # Assuming send_sms is defined in another file
 
 app = Flask(__name__)
+smsHandler = SMSHandler()
 
 # Route to handle incoming messages
 @app.route('/incoming-messages', methods=['POST'])
@@ -49,16 +50,20 @@ def delivery_reports():
         print(f"Error handling delivery report: {e}")
         return jsonify({"error": "Failed to process delivery report"}), 500
 
+@app.route('/')
+def home():
+    return "<h1>Welcome to mesho ai</h1>"
+
 if __name__ == "__main__":
     # Send an SMS message at startup (optional)
     try:
-        recipient = os.environ.get("RECIPIENT_PHONE", "+1234567890")  # Replace with a valid default
+        recipient = os.environ.get("RECIPIENT_PHONE", "265996406739")  # Replace with a valid default
         message = "This is a test message from the Flask app."
-        response = send_sms(recipient, message)  # Call send_sms function
+        response = smsHandler.send_sms(recipient, message)  # Call send_sms function
         print(f"SMS sent: {response}")
     except Exception as e:
         print(f"Failed to send SMS at startup: {e}")
     
     # Start the Flask app
-    port = int(os.environ.get("PORT", 5000))  # Default to port 5000 if not set
+    port = int(os.environ.get("PORT", 8000))  # Default to port 5000 if not set
     app.run(debug=True, port=port)
